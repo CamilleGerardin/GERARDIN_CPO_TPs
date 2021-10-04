@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package tp1;
+package manipNombresInt_GERARDIN;
 
 import java.util.Scanner;
 
@@ -11,7 +11,7 @@ import java.util.Scanner;
  * Gérardin, TD A, Saisie et manipulation de nombres, 04/10/2021
  * @author camille
  */
-public class TP1 {
+public class manipNombresInt_GERARDIN {
 
     /**
      * @param args the command line arguments
