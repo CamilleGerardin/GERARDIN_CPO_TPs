@@ -18,39 +18,64 @@ public class Convertisseur_GERARDIN {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner sc = new Scanner(System.in);
-        double temperatureC ; 
-        System.out.println("Entrer une temperature en Celsius :");
-        temperatureC=sc.nextFloat();
-        double temperatureK;
-        temperatureK = CelciusVersKelvin (temperatureC);
-        temperatureC = KelvinVersCelcius (temperatureK);
-        System.out.println("la temperature en Kelvin est :" + temperatureK);
-        double temperatureF;
+        System.out.println("Saisissez une valeur :");
+        double valeur ;
+        valeur =sc.nextFloat();
+        System.out.println("Saisissez la conversion que vous souhaiter effectuer : \n1) De Celcius vers Kelvin \n2) De Kelvin vers Celcius \n3) De Farenheit vers Celcius \n4) De Celcius vers Farenheit \n5) De Kelvin vers Farenheit \n6) De Farenheit vers Kelvin");
+        int conversion; 
+        conversion = sc.nextInt();
+        double result;
+        
+        switch(conversion) {
+            case 1  : 
+                result = CelciusVersKelvin(valeur);
+                System.out.println(valeur + " degré Celcius est égal à " + result + " degrés Kelvin");
+                break;
+            case 2 : 
+                result = KelvinVersCelcius(valeur);
+                System.out.println(valeur + " degré Kelvin est égal à " + result + " degrés Celcius");
+                break;
+            case 3 :
+                result = FarenheitVersCelcius(valeur);
+                System.out.println(valeur + " degré Farenheit est égal à " + result + " degrés Celcius");
+                break;
+            case 4 :
+                result = CelciusVersFarenheit(valeur);
+                System.out.println(valeur + " degré Celcius est égal à " + result + " degrés Farenheit");
+                break;
+            case 5 :
+                result = KelvinVersFarenheit(valeur);
+                System.out.println(valeur + " degré Kelvin est égal à " + result + " degrés Farenheit");
+                break;
+            case 6 : 
+                result = FarenheitVersKelvin(valeur);
+                System.out.println(valeur + " degré Farenheit est égal à " + result + " degrés Kelvin");
+        }
     }
-public static double CelciusVersKelvin (double temperatureC) {
-    double temperatureK = temperatureC + 273.15;
-    return (double) temperatureK;
+public static double CelciusVersKelvin ( double valeur) {
+    double result = valeur + 273.15;
+    return (double) result;
 }
- public static double KelvinVersCelcius (double temperatureK) {
-    double temperatureC = temperatureK - 273.15;
-    return (double) temperatureC; 
+ public static double KelvinVersCelcius (double valeur) {
+    double result = valeur - 273.15;
+    return (double) result; 
 }
- public static double FarenheitVersCelcius (double temperatureF) {
-    double temperatureC = (temperatureF - 32)/1.8;
-    return (double) temperatureC;
+ public static double FarenheitVersCelcius (double valeur) {
+    double result = (valeur - 32)/1.8;
+    return (double) result;
 }
- public static double CelciusVersFarenheit (double temperatureC) {
-    double temperatureF = temperatureC * 1.8 + 32;
-    return (double) temperatureF;
+ public static double CelciusVersFarenheit (double valeur) {
+    double result = valeur * 1.8 + 32;
+    return (double) result;
 }
- public static double KelvinVersFarenheit (double temperatureK) {
-    double temperatureC = KelvinVersCelcius(temperatureK);
-    double temperatureF = CelciusVersFarenheit(temperatureC);
-    return (double) temperatureF;
+ public static double KelvinVersFarenheit (double valeur) {
+    double result = KelvinVersCelcius(valeur);
+    double result2 = CelciusVersFarenheit(result);
+    return (double) result2;
 }
- public static double FarenheitVersKelvin (double temperatureF) {
-    double temperatureC = FarenheitVersCelcius(temperatureF);
-    double temperatureK = CelciusVersKelvin(temperatureC);
-    return (double) temperatureK;
+ public static double FarenheitVersKelvin (double valeur) {
+    double result= FarenheitVersCelcius(valeur);
+    double result2 = CelciusVersKelvin(result);
+    return (double) result2;
 }
 }
