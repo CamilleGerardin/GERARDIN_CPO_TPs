@@ -9,5 +9,23 @@ package sp4_console_gerardin;
  * @author camille
  */
 public class Cellule {
-    Jeton jetonCourant;   
+    Jeton jetonCourant;
+    
+    Cellule (){
+    
+    }
+    
+    boolean affecterJeton(Jeton j) {
+        return true;   
+    }
+    
+    String lireCouleurDuJeton(){
+        if (jetonCourant != null) {
+            return jetonCourant.Couleur;
+        }
+        else {
+            return ("vide");
+        }
+    }
 }
+

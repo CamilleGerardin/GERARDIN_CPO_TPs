@@ -11,11 +11,11 @@ package sp4_console_gerardin;
 public class Jeton {
     String Couleur;
     
-    public Jeton(String uneCouleur){
+    Jeton(String uneCouleur){
         Couleur = uneCouleur;
     }
     
-    public void lireCouleur() {
-        System.out.println("La couleur est " + Couleur);
+    String lireCouleur() {
+        return Couleur;
     }
 }

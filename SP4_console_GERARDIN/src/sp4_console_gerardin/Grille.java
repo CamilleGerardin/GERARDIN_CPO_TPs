@@ -9,6 +9,21 @@ package sp4_console_gerardin;
  * @author camille
  */
 public class Grille {
-    Cellule [6][7] CellulesJeu = new Cellule [6][7];
+    Cellule [][] CellulesJeu = new Cellule [6][7]; 
     
+    Grille(){
+        
+    }
+    
+    boolean ajouterJetonDansColonne(Jeton j, int nb1) {
+     return true; // à modifier 
+    }
+    
+    boolean etreRemplie(){
+        return true;   
+    }
+    
+    void viderGrille(){
+        
+    }
 }
