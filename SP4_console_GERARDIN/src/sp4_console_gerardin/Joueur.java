@@ -16,16 +16,17 @@ public class Joueur {
     //int nombreDesintegrateurs;
     
     
-    Joueur(String a){
-        
+    Joueur(String unNom){
+        Nom = unNom;
     }
     
-    void affecterCouleur(String c ){
-        Couleur = c;
+    void affecterCouleur(String uneCouleur){
+        Couleur = uneCouleur;
     }
     
     boolean ajouterJeton(Jeton j) {
         return true;
+        // à compléter
     }
     
     

@@ -16,7 +16,13 @@ public class Cellule {
     }
     
     boolean affecterJeton(Jeton j) {
-        return true;   
+        if(jetonCourant == null) {
+            jetonCourant = j;
+            return true;
+        }
+        else {
+            return false;
+        }
     }
     
     String lireCouleurDuJeton(){

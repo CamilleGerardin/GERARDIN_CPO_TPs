@@ -9,5 +9,25 @@ package sp4_console_gerardin;
  * @author camille
  */
 public class Partie {
+    Joueur[]ListeJoueurs = new Joueur[2];
+    Joueur jouerCourant;
+    Grille grilleJeu;
+    
+    Partie(Joueur joueur1, Joueur joueur2) {
+        
+    }
+    
+    void initialiserPartie(){
+        
+    }
+    
+    void debuterPartie(){
+        
+    }
+    
+    void attribuerCouleursAuxJoueurs(){
+        
+    }
+    
     
 }
