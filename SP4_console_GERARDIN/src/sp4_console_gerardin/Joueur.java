@@ -12,7 +12,7 @@ public class Joueur {
     String Nom;
     String Couleur;
     Jeton[]ListeJetons = new Jeton[21];
-    int nombreJetonsRestants;
+    int nombreJetonsRestants=0;
     //int nombreDesintegrateurs;
     
     
@@ -25,8 +25,12 @@ public class Joueur {
     }
     
     boolean ajouterJeton(Jeton j) {
-        return true;
-        // à compléter
+        if(nombreJetonsRestants<=21){
+                    ListeJetons[nombreJetonsRestants]= j;
+        nombreJetonsRestants++;
+        return true;    
+        }
+        return false;
     }
     
     

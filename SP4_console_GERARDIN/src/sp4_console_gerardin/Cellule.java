@@ -12,7 +12,7 @@ public class Cellule {
     Jeton jetonCourant;
     
     Cellule (){
-    
+        jetonCourant=null;
     }
     
     boolean affecterJeton(Jeton j) {

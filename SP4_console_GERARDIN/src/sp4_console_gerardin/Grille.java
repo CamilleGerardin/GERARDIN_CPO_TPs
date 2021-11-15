@@ -51,7 +51,13 @@ public class Grille {
     }
     
     void afficherGrilleSurConsole (){
-        //à compléter
+        for (int l=5; l>=0; l--){
+            for (int c=0; c<7; c++){
+                String  a = CellulesJeu[l][c].lireCouleurDuJeton();  
+                System.out.print(a+ " | ");
+            } 
+        System.out.println();
+        }
     }
     
     boolean celluleOccupee(int l, int c ) {
@@ -65,9 +71,48 @@ public class Grille {
         return (CellulesJeu[l][c].jetonCourant.Couleur); 
     }
     
-    boolean etreGagnantePourJoueur(Joueur a) {
-        return true;
-        // à compléter
+    boolean etreGagnantePourJoueur(Joueur unJoueur) {
+        for (int l=0; l<6; l++)
+            for (int c=0; c<4; c++)
+                if (CellulesJeu[l][c].jetonCourant!=null){
+                    if (CellulesJeu[l][c].jetonCourant.Couleur == unJoueur.Couleur){
+                        if (CellulesJeu[l][c].lireCouleurDuJeton()==CellulesJeu[l][c+1].lireCouleurDuJeton()  && CellulesJeu[l][c].lireCouleurDuJeton() == CellulesJeu[l][c+2].lireCouleurDuJeton() && CellulesJeu[l][c].lireCouleurDuJeton() == CellulesJeu[l][c+3].lireCouleurDuJeton()){
+                            return true;      
+                }
+                    }
+                }
+        
+        for (int l=0; l<3; l++)
+            for (int c=0; c<7; c++)
+                if (CellulesJeu[l][c].jetonCourant!=null){
+                    if (CellulesJeu[l][c].jetonCourant.Couleur == unJoueur.Couleur){
+                        if (CellulesJeu[l][c].lireCouleurDuJeton()==CellulesJeu[l+1][c].lireCouleurDuJeton() && CellulesJeu[l][c].lireCouleurDuJeton() == CellulesJeu[l+2][c].lireCouleurDuJeton() && CellulesJeu[l][c].lireCouleurDuJeton() == CellulesJeu[l+3][c].lireCouleurDuJeton()){
+                            return true;      
+                }
+                    }
+                }
+        
+        for (int l=0; l<3; l++)
+            for (int c=0; c<4; c++)
+                if (CellulesJeu[l][c].jetonCourant!=null){
+                    if (CellulesJeu[l][c].jetonCourant.Couleur == unJoueur.Couleur){
+                        if (CellulesJeu[l][c].lireCouleurDuJeton()==CellulesJeu[l+1][c+1].lireCouleurDuJeton() && CellulesJeu[l][c].lireCouleurDuJeton() == CellulesJeu[l+2][c+2].lireCouleurDuJeton() && CellulesJeu[l+2][c+2].lireCouleurDuJeton() == CellulesJeu[l+3][c+3].lireCouleurDuJeton()){
+                            return true;      
+                }
+                    }
+                } 
+        
+        for (int l=5; l>=3; l--)
+            for (int c=3; c>=0; c--)
+                if (CellulesJeu[l][c].jetonCourant!=null){
+                    if (CellulesJeu[l][c].jetonCourant.Couleur == unJoueur.Couleur){
+                        if (CellulesJeu[l][c].lireCouleurDuJeton()==CellulesJeu[l-1][c+1].lireCouleurDuJeton() && CellulesJeu[l][c].lireCouleurDuJeton() == CellulesJeu[l-2][c+2].lireCouleurDuJeton() && CellulesJeu[l][c].lireCouleurDuJeton() == CellulesJeu[l-3][c+3].lireCouleurDuJeton()){
+                            return true;      
+                }
+
+                    }
+                } 
+                return false;
     }
     
     boolean colonneRemplie(int c){

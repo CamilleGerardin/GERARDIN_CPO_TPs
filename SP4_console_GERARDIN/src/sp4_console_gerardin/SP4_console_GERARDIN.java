@@ -15,6 +15,20 @@ public class SP4_console_GERARDIN {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Jeton j = new Jeton("Rouge");
+        String S = j.lireCouleur();
+        System.out.println(S);
+        Cellule c = new Cellule();
+        S=c.lireCouleurDuJeton();
+        System.out.println(S);
+        c.affecterJeton(j);
+        S=c.lireCouleurDuJeton();
+        System.out.println(S);
+        Grille g = new Grille();
+        g.afficherGrilleSurConsole();
+        g.ajouterJetonDansColonne(j, 3);
+        g.afficherGrilleSurConsole();
+        System.out.println("fin");
     }
     
 }
